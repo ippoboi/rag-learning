@@ -1,0 +1,10 @@
+langchain_community
+tiktoken
+langchain-openai
+langchain-groq
+langchainhub
+chromadb
+langchain
+python-dotenv
+pyyaml
+pydantic
