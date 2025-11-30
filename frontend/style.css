@@ -1,0 +1,261 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  background: #ffffff;
+  color: #353740;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 24px;
+  min-height: 100vh;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.app-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "query sources"
+    "answer answer";
+  gap: 24px;
+  align-items: start;
+}
+
+.query-section {
+  grid-area: query;
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.query-description {
+  margin: 0 0 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #000;
+
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.example-questions {
+  margin-bottom: 16px;
+}
+
+.example-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.example-btn {
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  color: #000;
+  font-weight: 400;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.example-btn:active {
+  transform: translateY(0);
+}
+
+.message-box-wrapper {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 12px;
+  min-height: 120px;
+}
+
+textarea {
+  width: 100%;
+  border: none;
+  padding: 0;
+  resize: vertical;
+  min-height: 80px;
+  background: transparent;
+  color: #202123;
+  font-size: 0.95rem;
+  font-family: inherit;
+  line-height: 1.6;
+  outline: none;
+}
+
+textarea::placeholder {
+  color: #9ca3af;
+}
+
+#ask-button {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  background: #f9f9f9;
+  color: #202123;
+  font-weight: 500;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+#ask-button:hover:not(:disabled) {
+  background: #f3f3f3;
+  border-color: #9ca3af;
+}
+
+#ask-button:active:not(:disabled) {
+  background: #e5e5e5;
+}
+
+#ask-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.status {
+  min-height: 20px;
+  margin-top: 12px;
+  font-size: 0.875rem;
+  color: #6e6e80;
+}
+
+.status.error {
+  color: #8b0000;
+}
+
+.sources-section {
+  grid-area: sources;
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.sources-section h2 {
+  margin: 0 0 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #202123;
+}
+
+.sources-container {
+  min-height: 200px;
+  max-height: 400px;
+  overflow-y: auto;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 16px;
+  background: #ffffff;
+}
+
+.sources-container .empty-state {
+  color: #9ca3af;
+  font-style: italic;
+  margin: 0;
+}
+
+.source-item {
+  padding: 12px;
+  margin-bottom: 8px;
+  background: #f9f9f9;
+  border: 1px solid #e5e5e5;
+  border-radius: 6px;
+}
+
+.source-item:last-child {
+  margin-bottom: 0;
+}
+
+.source-path {
+  color: #202123;
+  font-weight: 500;
+  font-size: 0.875rem;
+  margin-bottom: 4px;
+  word-break: break-word;
+}
+
+.source-meta {
+  color: #6e6e80;
+  font-size: 0.8125rem;
+  margin-top: 4px;
+}
+
+.answer-section {
+  grid-area: answer;
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.answer-section h2 {
+  margin: 0 0 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #202123;
+}
+
+.answer-container {
+  min-height: 300px;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 20px;
+  background: #ffffff;
+  white-space: pre-wrap;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #353740;
+  word-wrap: break-word;
+}
+
+.answer-container:empty::before {
+  content: "Your answer will appear here...";
+  color: #9ca3af;
+  font-style: italic;
+}
+
+.answer-container p {
+  margin: 0 0 12px;
+}
+
+.answer-container p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 900px) {
+  .app-main {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "query"
+      "sources"
+      "answer";
+  }
+
+  .app-container {
+    padding: 16px;
+  }
+}

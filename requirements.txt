@@ -11,3 +11,4 @@ pyyaml
 pydantic
 sentence-transformers
 langchain_huggingface
+fastapi

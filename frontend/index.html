@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>FastAPI RAG Assistant</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      <header class="app-header">
+        <h1>FastAPI RAG Assistant</h1>
+      </header>
+
+      <main class="app-main">
+        <section class="query-section">
+          <p class="query-description">
+            You can ask a question or choose an option to test
+          </p>
+
+          <div class="example-questions">
+            <div class="example-buttons">
+              <button
+                class="example-btn"
+                data-question="What is dependency injection in FastAPI and how do I use it?"
+              >
+                Dependency Injection
+              </button>
+              <button
+                class="example-btn"
+                data-question="How do I define a Pydantic model for a request body in FastAPI?"
+              >
+                Pydantic Request Body
+              </button>
+              <button
+                class="example-btn"
+                data-question="How can I run background tasks in FastAPI?"
+              >
+                Background Tasks
+              </button>
+              <button
+                class="example-btn"
+                data-question="How do I enable CORS in FastAPI?"
+              >
+                Enable CORS
+              </button>
+              <button
+                class="example-btn"
+                data-question="How do I declare path and query parameters in FastAPI?"
+              >
+                Path & Query Params
+              </button>
+            </div>
+          </div>
+          <div class="message-box-wrapper">
+            <textarea
+              id="question"
+              placeholder="Message box"
+              rows="4"
+            ></textarea>
+            <button id="ask-button" title="Send">Send</button>
+          </div>
+          <p id="status" class="status"></p>
+        </section>
+
+        <section class="sources-section">
+          <h2>Sources</h2>
+          <div id="sources" class="sources-container"></div>
+        </section>
+
+        <section class="answer-section">
+          <h2>Answer</h2>
+          <div id="answer" class="answer-container"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="/main.js" defer></script>
+  </body>
+</html>
