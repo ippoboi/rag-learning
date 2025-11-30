@@ -25,13 +25,8 @@ All of the app-specific code lives inside this `rag-learning/` directory:
       - `fastapi_dense_docs` under `chroma_fastapi/dense`
       - `fastapi_faq_docs` under `chroma_fastapi/faq`
     - defines the routing, multi-query reformulation, and final RAG chain
-
-- **`chroma_fastapi/`**
-
-  - On-disk Chroma vector stores created from the notebook:
-    - `dense/` – main FastAPI docs corpus (tutorials, guides, etc.)
-    - `faq/` – lightweight FAQ / best-practices corpus
-
+   
+  
 - **`backend/`**
 
   - `__init__.py` – backend package marker.
