@@ -5,6 +5,9 @@ langchain-groq
 langchainhub
 chromadb
 langchain
+langchain-text-splitters
 python-dotenv
 pyyaml
 pydantic
+sentence-transformers
+langchain_huggingface
