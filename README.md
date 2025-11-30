@@ -25,8 +25,7 @@ All of the app-specific code lives inside this `rag-learning/` directory:
       - `fastapi_dense_docs` under `chroma_fastapi/dense`
       - `fastapi_faq_docs` under `chroma_fastapi/faq`
     - defines the routing, multi-query reformulation, and final RAG chain
-   
-  
+
 - **`backend/`**
 
   - `__init__.py` – backend package marker.
@@ -60,20 +59,32 @@ All of the app-specific code lives inside this `rag-learning/` directory:
 
 ---
 
+## Prerequisites
+
+Before using the API or UI, you need to:
+
+1. **Generate the Chroma vector stores** by running the notebook `fast-api-rag.ipynb`:
+
+   - Execute at least the cells that build and persist the vector stores
+   - This will create `chroma_fastapi/dense/` and `chroma_fastapi/faq/` directories
+   - Note: These directories are gitignored (they contain generated artifacts)
+
+2. **Set up environment variables**:
+
+   - Create a `.env` file with your `GROQ_API_KEY`
+   - Optionally add LangSmith variables (`LANGSMITH_TRACING`, `LANGSMITH_API_KEY`, etc.)
+
+3. **Install dependencies**:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
 ## Running the RAG backend
 
-Before using the API or UI, you should:
-
-- create the Chroma indexes by running the notebook (at least the cells that
-  build and persist the `dense` and `faq` vector stores)
-- ensure your environment variables for Groq and (optionally) LangSmith are set
-
-From this inner `rag-learning/` directory, activate your virtual environment
-and start the backend:
+From the `rag-learning/` directory, activate your virtual environment and start the backend:
 
 ```bash
-cd /Users/dimitar/Desktop/Software_Dev/rag-learning/rag-learning
-source venv/bin/activate  # or equivalent for your shell
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 
 uvicorn backend.app:app --reload
 ```
